@@ -1,0 +1,178 @@
+/*Esto es un normalizador para que todos los valores por defecto del navegador sea 0*/
+
+*{
+	margin: 0;
+    padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+    outline: none;        
+}
+
+
+body{
+    background:greenyellow;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#ingreso{
+    text-align: center;
+    padding:20px;
+    width:1100px;
+    border: 2px solid green;
+    border-radius:20px;
+    height: 550px;
+    transform: translate(120px,20px);
+}
+
+
+#ingreso h1,h2{
+    margin:10px;
+    margin-bottom:25px;
+}
+
+#companies{
+    display: inline-flex;
+    float:left;
+    transform: translateY(10px);
+}
+
+
+.company{
+    width: 250px;
+    height: 300px;    
+    margin:0;
+    margin-left:15px;
+}
+
+.logo{
+    width: 200px;
+    height: 200px;
+}
+
+.form-submit{
+    padding:5px;
+    background:greenyellow;
+    border:  2px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 200px;
+    height:40px;
+    margin:10px;
+}
+
+.form-submit:hover{
+    padding:5px;
+    background:black;
+    border:  2px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 200px;
+    height:40px;
+    color:white;
+    transition: 0.5s;
+    margin:10px;
+}
+
+.new-company{
+    height: 50px;
+    width:50px;
+}
+
+.new-company-text{
+    font-weight:  bold;
+    color:white;
+    transform: translate(5px,17px);
+}
+
+.new-company-button{
+    float: right;
+    border:2px solid black;
+    border-radius:10px;
+    padding:10px;
+    transform: translateY(-100px);
+    margin:10px;
+    width:200px;
+    display: inline-flex;
+}
+
+.new-company-button:hover{
+    float:right;
+    border:2px solid white;
+    border-radius:10px;
+    padding:10px;
+    transform: translateY(-100px);
+    margin:10px;
+    background: black;
+    transition: 0.5s;
+    color:white;
+    display: inline-flex;
+    width:200px;
+
+
+}
+
+.back-text{
+    color:black;
+    float:right;
+    padding:10px;
+    font-weight: bold;
+    border:  1px solid black;
+    border-radius: 20px;
+    transform: translate(-130px,-50px);
+}
+
+.back-text:hover{
+    color:white;
+    float:right;
+    padding:10px;
+    font-weight: bold;
+    border:  1px solid black;
+    border-radius: 20px;
+    background: #000000;
+}
+
+#new-company-form{
+    transform: translate(180px,-500px);
+    display: block;
+}
+
+.new-company-text2{
+    font-size: 1.5em;
+    padding:15px;
+}
+
+.new-company-input{
+    width:500px;
+    height: 40px;
+    border:  2px solid black;
+    border-radius:10px;
+    font-size: 0.8em;
+    color:gray;
+}
+
+.new-company-submit{
+    padding:10px;
+    color:black;
+    border: 2px solid #000000;
+    font-weight: bold;
+    border-radius: 15px;
+    transform: translate(850px,-300px);
+    font-size: 1.5em;
+    background:transparent;
+}
+
+.new-company-submit:hover{
+    padding:10px;
+    background: black;
+    color:white;
+    border: 2px solid white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 15px;
+    transform: translate(850px,-300px);
+    font-size: 1.5em;
+}
