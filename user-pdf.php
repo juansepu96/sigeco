@@ -18,7 +18,7 @@ class PDF extends FPDF
         // Título
         $this->Ln(10);
         $this->Cell(60);
-        $this->Cell(160,10,$_SESSION['company.name'].' - LISTADO DE USUARIOS - SiGeUsu v3',1,0,'C');
+        $this->Cell(160,10,$_SESSION['company.name'].' - LISTADO DE USUARIOS - SiGeCo v1.0',1,0,'C');
         // Salto de línea
         $this->Cell(60);
         #$this->Cell(120,10,'FECHA: '.date('d/m/Y'),1,0,'C');

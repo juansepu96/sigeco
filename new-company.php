@@ -23,6 +23,8 @@ if(isset($_POST['submit'])){
     $bd_name=str_replace(' ','',$bd_name);
     $bd_name=str_replace('/','',$bd_name);
     $bd_name=str_replace('.','',$bd_name);
+    $bd_name=str_replace(':','',$bd_name);
+    $bd_name=str_replace(',','',$bd_name);
     $bd_name=str_replace('ñ','n',$bd_name);
     $bd_name=str_replace('Ñ','N',$bd_name);
     $template=$_POST['company_style'];
@@ -37,7 +39,7 @@ if(isset($_POST['submit'])){
     $fileNameCmps = explode(".", $fileName);
     $fileExtension = strtolower(end($fileNameCmps));
     $newFileName = $bd_name . '.' . $fileExtension;
-    $uploadFileDir = '../sigeusu v3/logos/';
+    $uploadFileDir = '../sigeco/logos/';
     $dest_path = $uploadFileDir . $newFileName;
     move_uploaded_file($fileTmpPath, $dest_path);    
 
@@ -56,7 +58,7 @@ if(isset($_POST['submit'])){
 
     $CreateTables=$conexion2->query("CREATE TABLE auditory (ID INT(11) AUTO_INCREMENT PRIMARY KEY,user VARCHAR(50) NOT NULL,date date NOT NULL,time time NOT NULL,movement VARCHAR(200) NOT NULL,description text)");
 
-    $CreateTables=$conexion2->query("CREATE TABLE companydata (ID INT(11) AUTO_INCREMENT PRIMARY KEY,name VARCHAR(100) NOT NULL,dbname VARCHAR(50) NOT NULL,logo VARCHAR(50) NOT NULL,style VARCHAR(50) NOT NULL,tribut_id VARCHAR(30) NOT NULL,customertype VARCHAR(100) NOT NULL,location VARCHAR(100) NOT NULL)");
+    $CreateTables=$conexion2->query("CREATE TABLE companydata (ID INT(11) AUTO_INCREMENT PRIMARY KEY,name VARCHAR(100) NOT NULL,dbname VARCHAR(50) NOT NULL,logo VARCHAR(50) NOT NULL,style VARCHAR(50) NOT NULL,tribut_id VARCHAR(30) NOT NULL,customertype VARCHAR(100) NOT NULL,location VARCHAR(100) NOT NULL,inicio_fiscal DATE,fin_fiscal DATE, validatekey VARCHAR (200))");
 
     $InsertCompanyData=$conexion2->prepare("INSERT INTO companydata (name,dbname,logo,style,tribut_id,customertype,location) VALUES (:name,:bdname,:logo,:style,:tribut_id,:customer_type,:location)");
 
@@ -86,6 +88,18 @@ if(isset($_POST['submit'])){
     $InsertUser=$conexion2->query("INSERT INTO zones (ID,description) VALUES('4','ESTE')");
     $InsertUser=$conexion2->query("INSERT INTO zones (ID,description) VALUES('5','OESTE')");
 
+    $CreateTables=$conexion2->query("CREATE TABLE accounts (ID INT(11) AUTO_INCREMENT PRIMARY KEY,code VARCHAR(200) NOT NULL,name VARCHAR(200) NOT NULL,dad VARCHAR (200),type VARCHAR(2) NOT NULL,level INT(5) NOT NULL,active VARCHAR(2) NOT NULL,inflacion VARCHAR(2) NOT NULL,imputable VARCHAR(2) NOT NULL)");
+
+    $CreateTables=$conexion2->query("CREATE TABLE assets (ID INT(11) AUTO_INCREMENT PRIMARY KEY,date DATE NOT NULL,status VARCHAR(100),type INT(11))");
+
+    $CreateTables=$conexion2->query("CREATE TABLE assets_row (ID INT(11) AUTO_INCREMENT PRIMARY KEY,asset_number INT (11),row_number VARCHAR(200) NOT NULL,account VARCHAR(200) NOT NULL,date_op DATE NOT NULL,date_ven DATE NOT NULL,suc VARCHAR(200) NOT NULL,secc VARCHAR(200),concep TEXT NOT NULL,type INT(2) NOT NULL,import VARCHAR(100),comprobante VARCHAR (200),status INT (11))");
+
+    $CreateTables=$conexion2->query("CREATE TABLE balances (ID INT(11) AUTO_INCREMENT PRIMARY KEY,code VARCHAR (200),saldoi VARCHAR(200) NOT NULL,debe VARCHAR(200) NOT NULL,haber VARCHAR(200),type INT (11) NOT NULL,level INT(11) NOT NULL,dad VARCHAR(200),num INT(11))");
+
+    $CreateTables=$conexion2->query("CREATE TABLE lib_diario (ID INT(11) AUTO_INCREMENT PRIMARY KEY,date DATE NOT NULL)");
+
+
+
     $conexion = new PDO('mysql:host=localhost;dbname=sigeusuv3','root','');
 
     $GetUses=$conexion->prepare("SELECT * FROM uniques_keys WHERE unique_key=:id");
@@ -109,7 +123,7 @@ $GetCompanyData=$conexion->query("SELECT * from companydata");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

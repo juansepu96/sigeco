@@ -66,23 +66,23 @@ if(isset($_POST['excel'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo $_SESSION['company.style'];?>">
-    <title>Buscar Puntos de Venta - SiGeUsu v3</title>
+    <title>Buscar Puntos de Venta - SiGeCo v1.0</title>
 </head>
 <body>
   <?php if ($sepuede=='true') { ?>
 
     <div class="header">
-        <img src="/sigeusu v3/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
+        <img src="/sigeco/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
         <p class="header-text">Usuario: <?php echo $_SESSION['user.name'];?></p>
         <p class="header-text">Rol: <?php echo $_SESSION['user.role'];?></p>
         <p class="header-text">Empresa: <?php echo $_SESSION['company.name'];?></p>
-        <?php require_once "menu.php"; ?>
+        <?php require_once "pdv_menu.php"; ?>
     </div>
 
     <div class="content">
@@ -119,17 +119,6 @@ if(isset($_POST['excel'])){
                 </table>
 
             <?php } ?>
-
-        </div>
-
-        <div>
-            <ul class="SecondMenu"> 
-                <a href="new-pdv.php"><li class="menu2-button">ALTA</li></a>
-                <a href="delete-pdv.php"><li class="menu2-button">BAJA</li></a>
-                <a href="change-pdv.php"><li class="menu2-button">MODIFICAR</li></a>
-                <a href="find-pdv.php"><li class="menu2-button" style="background:black;">CONSULTAR</li></a>
-                <a href="pdv.php"><li class="menu2-button" >LISTAR</li></a>
-            </ul>
 
         </div>
 

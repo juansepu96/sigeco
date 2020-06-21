@@ -1,0 +1,145 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+--
+-- Database: `Pontebella`
+--
+
+
+
+
+CREATE TABLE `auditory` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `movement` varchar(200) NOT NULL,
+  `description` text,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO auditory VALUES
+("1","ADMIN","2019-06-23","19:27:34","HA INICIADO SESION.",""),
+("2","ADMIN","2019-06-23","19:27:36","LISTAR PUNTOS DE VENTA",""),
+("3","ADMIN","2019-06-23","19:27:44","NUEVO PUNTO DE VENTA","CARGA DEL PUNTO DE VENTA: ID:  DESCRIPCION: Oeoe"),
+("4","ADMIN","2019-06-23","19:27:44","LISTAR PUNTOS DE VENTA",""),
+("5","ADMIN","2019-06-23","19:27:47","LISTAR VENDEDORES",""),
+("6","ADMIN","2019-06-23","19:40:04","ABRIR AUDITORIA",""),
+("7","ADMIN","2019-06-23","19:49:29","LISTAR VENDEDORES",""),
+("8","ADMIN","2019-06-23","20:07:24","LISTAR PUNTOS DE VENTA",""),
+("9","ADMIN","2019-06-23","20:07:29","NUEVO PUNTO DE VENTA","CARGA DEL PUNTO DE VENTA: ID:  DESCRIPCION: Hola"),
+("10","ADMIN","2019-06-23","20:07:29","LISTAR PUNTOS DE VENTA",""),
+("11","ADMIN","2019-06-23","20:07:30","LISTAR VENDEDORES",""),
+("12","ADMIN","2019-06-23","20:10:10","NUEVO VENDEDOR","CARGA DEL VENDEDOR: ytguhjik"),
+("13","ADMIN","2019-06-23","20:10:10","LISTAR VENDEDORES",""),
+("14","ADMIN","2019-08-20","20:06:11","HA INICIADO SESION.",""),
+("15","ADMIN","2019-08-20","20:06:21","LISTAR VENDEDORES",""),
+("16","ADMIN","2019-08-20","20:07:00","LISTAR PUNTOS DE VENTA",""),
+("17","ADMIN","2019-08-20","20:07:03","LISTAR USUARIOS",""),
+("18","ADMIN","2019-08-20","20:07:10","ABRIR AUDITORIA",""),
+("19","ADMIN","2019-08-20","20:08:02","ABRIR AUDITORIA",""),
+("20","ADMIN","2019-08-20","20:08:04","ABRIR AUDITORIA",""),
+("21","ADMIN","2019-08-20","20:10:18","ABRIR AUDITORIA",""),
+("22","ADMIN","2019-08-20","20:10:28","ABRIR AUDITORIA",""),
+("23","ADMIN","2019-08-20","20:10:34","ABRIR AUDITORIA",""),
+("24","ADMIN","2019-08-20","20:10:49","HA CERRADO SESION.",""),
+("25","SUPERADMINISTRADOR","2019-08-20","20:11:04","SE REALIZO COPIA DE SEGURIDAD","");
+
+
+
+
+CREATE TABLE `companydata` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `dbname` varchar(50) NOT NULL,
+  `logo` varchar(50) NOT NULL,
+  `style` varchar(50) NOT NULL,
+  `tribut_id` varchar(30) NOT NULL,
+  `customertype` varchar(100) NOT NULL,
+  `location` varchar(100) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO companydata VALUES
+("1","Pontebella","Pontebella","Pontebella.jpeg","orange.css","30-1542635152-7","IVA Sujeto Exento","Pepito 321");
+
+
+
+
+CREATE TABLE `pdv` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(200) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=333 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO pdv VALUES
+("255","Oeoe"),
+("332","Hola");
+
+
+
+
+CREATE TABLE `sellers` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `DNI` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `birthdate` date NOT NULL,
+  `phone` bigint(20) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `pdv_ID` int(11) NOT NULL,
+  `zone_ID` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO sellers VALUES
+("1","5616156","ytguhjik","1996-10-25","3467890","dfghjkl@fghjkl.com","255","2");
+
+
+
+
+CREATE TABLE `users` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `active` varchar(2) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `role` varchar(50) NOT NULL,
+  `user` varchar(200) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO users VALUES
+("1","ADMIN","SI","admin","SUPERADMINISTRADOR","admin");
+
+
+
+
+CREATE TABLE `zones` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO zones VALUES
+("1","NORTE"),
+("2","SUR"),
+("3","CENTRO"),
+("4","ESTE"),
+("5","OESTE");
+
+
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

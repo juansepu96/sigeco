@@ -103,13 +103,24 @@ body{
     padding: 10px;
     transform: translate(30px,5px);
 }
-
 .MainMenu{
+    padding:25px;
+    padding-top:70px;
     display: inline-flex;
-    transform: translate(10px,-30px);
+}
+.MainMenu img{
+    width:200;
+    height: 200px;
+    padding:10px;
+    border-radius: 150px;
+}
+.MainMenu h4{
+    text-align:center;
+    text-decoration:  none;
+    color:white;
 }
 
-.menu-button{
+.-menu-button{
     text-decoration:  none;
     border:  1px solid white;
     border-radius: 3px;
@@ -127,7 +138,7 @@ body{
     height: 20px;
 }
 
-.menu-button:hover{
+.-menu-button:hover{
     text-decoration:  none;
     border:  1px solid white;
     border-radius: 4px;
@@ -157,7 +168,7 @@ body{
 
 .table{
     background: rgba(255, 255, 255,0.9);
-    width: 900px;
+    width: 1320px;
     height: 120%;
     margin:20px;
     border-radius: 20px;
@@ -170,10 +181,9 @@ body{
     font-weight: bold;
     font-size: 1em;
     text-align: center;
-    width: 180px;
-    background: white;
-    margin-left:60px;
-    margin-top:110px;
+    width: 130px;
+    display: inline-flex;
+    transform:translate(500px,-110px);
 }
 
 .menu2-button{
@@ -181,7 +191,7 @@ body{
     border-radius: 3px;
     padding:10px;
     margin:5px;
-    width: 150px;
+    width: 130px;
     background: orange;
 }
 
@@ -190,7 +200,7 @@ body{
     border-radius: 3px;
     padding:10px;
     margin:5px;
-    width: 150px;
+    width: 130px;
     background: black;
     cursor: pointer;
     transition: 0.9s;
@@ -305,7 +315,7 @@ body{
 }
 
 .action-button{
-    margin-left:150px;
+    margin-left:230px;
     padding:10px;
     color:white; 
     background:orange;

@@ -44,22 +44,22 @@ $Consulta=$conexion->query("SELECT * from sellers");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo $_SESSION['company.style'];?>">
-    <title>Eliminar vendedores - SiGeUsu v3</title>
+    <title>Eliminar vendedores - SiGeCo v1.0</title>
 </head>
 <body>
 
 <div class="header">
-        <img src="/sigeusu v3/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
+        <img src="/sigeco/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
         <p class="header-text">Usuario: <?php echo $_SESSION['user.name'];?></p>
         <p class="header-text">Rol: <?php echo $_SESSION['user.role'];?></p>
         <p class="header-text">Empresa: <?php echo $_SESSION['company.name'];?></p>
-        <?php require_once "menu.php"; ?>
+        <?php require_once "sellers_menu.php"; ?>
     </div>
 
     <div class="content">
@@ -71,7 +71,7 @@ $Consulta=$conexion->query("SELECT * from sellers");
                     <th>F. de Nacimiento</th>
                     <th style="width: 15%;">Telefono</th>
                     <th style="width: 30%;">E-mail</th>
-                    <th>BAJA</th>
+                    <th style="width: 15%;">BAJA</th>
                 </tr>
                 <?php foreach ($Consulta as $Vendedor) { ?>
                     <form method="post" action="delete-seller.php">
@@ -90,17 +90,6 @@ $Consulta=$conexion->query("SELECT * from sellers");
                 <?php } ?>
 
             </table>
-
-        </div>
-
-        <div>
-            <ul class="SecondMenu"> 
-                <a href="new-seller.php"><li class="menu2-button">ALTA</li></a>
-                <a href="delete-seller.php"><li class="menu2-button" style="background:black;">BAJA</li></a>
-                <a href="change-seller.php"><li class="menu2-button">MODIFICAR</li></a>
-                <a href="find-sellers.php"><li class="menu2-button">CONSULTAR</li></a>
-                <a href="sellers.php"><li class="menu2-button" >LISTAR</li></a>
-            </ul>
 
         </div>
 

@@ -35,13 +35,13 @@ if(isset($_POST['backup'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo $_SESSION['company.style'];?>">
-    <title>Inicio de Sesion - SiGeUsu v3</title>
+    <title>Inicio de Sesion - SiGeCo v1.0</title>
     <style>
         #auth{
             width:320px;
@@ -52,7 +52,6 @@ if(isset($_POST['backup'])){
             transform:translate(200px,-250px);
             color:white;
         }
-
     </style>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src=”https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js”></script>
@@ -60,10 +59,10 @@ if(isset($_POST['backup'])){
 </head>
 <body>
     <div class="form">
-        <img src="/sigeusu v3/logos/<?php echo $_SESSION['company.logo'];?>" id="logo">
+        <img src="/sigeco/logos/<?php echo $_SESSION['company.logo'];?>" id="logo">
         <form method="post" action="login.php" autocomplete="off">
 
-            <h1 class="form-title">¡ Bienvenido a SiGeUsu v3.0 !</h1>
+            <h1 class="form-title">¡ Bienvenido a SiGeCo v1.0 !</h1>
 
             <h1 class="form-title">Debe iniciar sesion para ingresar al sistema.</h1>
 

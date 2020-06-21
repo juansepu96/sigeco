@@ -10,13 +10,13 @@ $Consulta=$conexion->query($_SESSION['a.imprimir']);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo $_SESSION['company.style'];?>">
-    <title>IMPRIMIR LISTADO - SiGeUsu v3</title>
+    <title>IMPRIMIR LISTADO - SiGeCo v1.0</title>
 </head>
 <body style="background:white;" onload="window.print();window.close();">
 

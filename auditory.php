@@ -138,20 +138,20 @@ if(isset($_POST['excel'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo $_SESSION['company.style'];?>">
-    <title>Auditorias - SiGeUsu v3</title>
+    <title>Auditorias - SiGeCo v1.0</title>
 </head>
 <body>
 
 <div class="header">
-        <img src="/sigeusu v3/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
+        <img src="/sigeco/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
         <p class="header-text">Usuario: <?php echo $_SESSION['user.name'];?></p>
         <p class="header-text">Rol: <?php echo $_SESSION['user.role'];?></p>
         <p class="header-text">Empresa: <?php echo $_SESSION['company.name'];?></p>
-        <?php require_once "menu.php"; ?>
+        <?php require_once "auditory_menu.php"; ?>
     </div>
 
     <div class="content">
-        <div class="table" style="height:100%; width:1150px; padding:0px; margin:5px;">
+        <div class="table" style="height:100%; width:1330px; padding:0px; margin:5px;">
             <form method="post" action="auditory.php">
                 <div id="auditory-filters">
                     <strong style="margin-left:10px;">Tabla:</strong>
@@ -176,13 +176,13 @@ if(isset($_POST['excel'])){
                     <strong style="margin-right:10px;">Fecha hasta:</strong><input type="date" style="padding:10px;width:130px;" name="fechahasta"></strong>
                     <input type="submit" class="menu2-button" style="width:100px;" name="filter" value="Filtrar">
                 </div>
-                <table style="width:1150px;">
+                <table style="width:1330px;">
                     <tr>
                         <th>USUARIO</th>
                         <th>FECHA</th>
                         <th>HORA</th>
                         <th>MOVIMIENTO</th>
-                        <th>DETALLES</th>
+                        <th >DETALLES</th>
                     </tr>
                     <?php foreach ($Consulta as $Movement) { ?>
                         <tr>
@@ -196,17 +196,6 @@ if(isset($_POST['excel'])){
 
                 </table>
             </form>
-
-        </div>
-
-        <div>
-            <ul class="SecondMenu" style="padding:5px; margin:10px; position: fixed; overflow: hidden;"> 
-            <form method="post" action="auditory.php" style="padding:5px;display:inline-block;">
-                <input type="submit" class="menu2-button" value="IMPRIMIR" name="print">
-                <input type="submit" class="menu2-button" value="EXPORTAR A PDF" name="pdf">
-                <input type="submit" class="menu2-button" value="EXPORTAR A EXCEL" name="excel">
-            </form>
-            </ul>
 
         </div>
 

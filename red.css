@@ -103,52 +103,22 @@ body{
     padding: 10px;
     transform: translate(30px,5px);
 }
-
 .MainMenu{
+    padding:25px;
+    padding-top:70px;
     display: inline-flex;
-    transform: translate(10px,-30px);
+}
+.MainMenu img{
+    width:200;
+    height: 200px;
+    padding:10px;
+    border-radius: 150px;
 }
 
-.menu-button{
+.MainMenu h4{
+    text-align:center;
     text-decoration:  none;
-    border:  1px solid white;
-    border-radius: 3px;
-    padding: 15px;
-    font-weight: bold;
-    font-size: 1em;
-    text-align: center;
-    width: 100px;
-    background: darkred;
-    transform:  translate(280px,-50px);
-    margin: 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20px;
-}
-
-.menu-button:hover{
-    text-decoration:  none;
-    border:  1px solid white;
-    border-radius: 4px;
-    padding: 15px;
-    text-align: center;
-    width: 100px;
-    background:black;
-    transform:  translate(280px,-50px);
-    margin: 1px;
-    height: 20px;
-    cursor: pointer;
-    transition: 0.9s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.MainMenu a{
     color:white;
-    font-weight: bold;
-    font-size: 1.05em;
 }
 
 .content{
@@ -157,7 +127,7 @@ body{
 
 .table{
     background: rgba(255, 255, 255,0.9);
-    width: 900px;
+    width: 1320px;
     height: 120%;
     margin:20px;
     border-radius: 20px;
@@ -170,10 +140,10 @@ body{
     font-weight: bold;
     font-size: 1em;
     text-align: center;
-    width: 180px;
-    background: white;
-    margin-left:60px;
-    margin-top:110px;
+    width: 130px;
+    display: inline-flex;
+    transform:translate(500px,-110px);
+    
 }
 
 .menu2-button{
@@ -181,8 +151,9 @@ body{
     border-radius: 3px;
     padding:10px;
     margin:5px;
-    width: 150px;
+    width: 130px;
     background: darkred;
+    color:white;
 }
 
 .menu2-button:hover{
@@ -190,7 +161,7 @@ body{
     border-radius: 3px;
     padding:10px;
     margin:5px;
-    width: 150px;
+    width: 130px;
     background: black;
     cursor: pointer;
     transition: 0.9s;
@@ -198,6 +169,13 @@ body{
 
 .SecondMenu a{
     color:white;
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+.SecondMenu input{
+    color:white;
+
     font-weight: bold;
     font-size: 1.05em;
 }
@@ -305,7 +283,7 @@ body{
 }
 
 .action-button{
-    margin-left:150px;
+    margin-left:230px;
     padding:10px;
     color:white; 
     background:darkred;

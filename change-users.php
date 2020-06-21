@@ -119,7 +119,7 @@ $Consulta=$conexion->query("SELECT * from users");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -128,16 +128,16 @@ $Consulta=$conexion->query("SELECT * from users");
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src=”https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js”></script>
     <script type="text/javascript" src="change-users.js"></script>
-    <title>Modificar Usuarios - SiGeUsu v3</title>
+    <title>Modificar Usuarios - SiGeCo v1.0</title>
 </head>
 <body>
 
 <div class="header">
-        <img src="/sigeusu v3/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
+        <img src="/sigeco/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
         <p class="header-text">Usuario: <?php echo $_SESSION['user.name'];?></p>
         <p class="header-text">Rol: <?php echo $_SESSION['user.role'];?></p>
         <p class="header-text">Empresa: <?php echo $_SESSION['company.name'];?></p>
-        <?php require_once "menu.php"; ?>
+        <?php require_once "users_menu.php"; ?>
     </div>
 
     <div class="content">
@@ -220,16 +220,6 @@ $Consulta=$conexion->query("SELECT * from users");
              </form>
         <?php } ?>
 
-        <div>
-            <ul class="SecondMenu"> 
-                <a href="new-users.php"><li class="menu2-button">ALTA</li></a>
-                <a href="delete-users.php"><li class="menu2-button" >BAJA</li></a>
-                <a href="change-users.php"><li class="menu2-button" style="background:black;">MODIFICAR</li></a>
-                <a href="find-users.php"><li class="menu2-button">CONSULTAR</li></a>
-                <a href="users.php"><li class="menu2-button" >LISTAR</li></a>
-            </ul>
-
-        </div>
 
     </div>
     

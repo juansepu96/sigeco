@@ -126,7 +126,7 @@ if(isset($_POST['update'])){
         $fileNameCmps = explode(".", $fileName);
         $fileExtension = strtolower(end($fileNameCmps));
         $newFileName = $bd_name . '.' . $fileExtension;
-        $uploadFileDir = '../sigeusu v3/logos/';
+        $uploadFileDir = '../sigeco/logos/';
         $dest_path = $uploadFileDir . $newFileName;
         move_uploaded_file($fileTmpPath, $dest_path);    
 
@@ -163,15 +163,20 @@ if(isset($_POST['update'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo $_SESSION['company.style'];?>">
-    <title>Modificar empresa - SiGeUsu v3</title>
+    <title>Modificar empresa - SiGeCo v1.0</title>
 </head>
 <body>
     <div class="header">
-            <img src="/sigeusu v3/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
+            <img src="/sigeco/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
             <p class="header-text">Usuario: <?php echo $_SESSION['user.name'];?></p>
             <p class="header-text">Rol: <?php echo $_SESSION['user.role'];?></p>
             <p class="header-text">Empresa: <?php echo $_SESSION['company.name'];?></p>
-            <?php require_once "menu.php"; ?>
+            <div>
+            <ul class="SecondMenu" style="transform:translate(350px,-100px);">                
+                    <a href="index2.php"><li class="menu2-button" style="width:100px;">VOLVER</li></a>
+            </ul>
+
+</div>
     </div>
     
     <div id="new-company-form">
@@ -248,7 +253,7 @@ if(isset($_POST['update'])){
             </p>
             <p style="font-weight:bold;">CUIT: <input style="margin-left:105px;" type="text" name="company_cuit" id="company_cuit" class="newseller-field" value="<?php echo $tribut_id;?>"></p>
             <p style="font-weight:bold;">Direccion: <input style="margin-left:75px;" type="text" name="company_location" id="company_location" class="newseller-field" value="<?php echo $location;?>"></p>
-            <input type="submit" style="color:white;transform:translateX(500px);margin:20px;height:50px;" name="update" id="update" class="menu-button" value="Actualizar">
+            <input type="submit" style="color:white;transform:translateX(500px);margin:20px;height:50px;" name="update" id="update" class="menu2-button" value="Actualizar">
 
         </form>
 

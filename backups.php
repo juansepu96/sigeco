@@ -85,7 +85,7 @@ if(isset($_POST['restore2'])){
     $fileNameCmps = explode(".", $fileName);
     $fileExtension = strtolower(end($fileNameCmps));
     $newFileName = $bd_name . '.' . $fileExtension;
-    $uploadFileDir = '../sigeusu v3/backups/';
+    $uploadFileDir = '../sigeco/backups/';
     $dest_path = $uploadFileDir . $newFileName;
     move_uploaded_file($fileTmpPath, $dest_path);    
 
@@ -99,6 +99,13 @@ if(isset($_POST['restore2'])){
         $DeleteTable=$conexion->query("DROP TABLE sellers");
         $DeleteTable=$conexion->query("DROP TABLE users");
         $DeleteTable=$conexion->query("DROP TABLE zones");
+        $DeleteTable=$conexion->query("DROP TABLE accounts");
+        $DeleteTable=$conexion->query("DROP TABLE assets");
+        $DeleteTable=$conexion->query("DROP TABLE assets_row");
+        $DeleteTable=$conexion->query("DROP TABLE balances");
+        $DeleteTable=$conexion->query("DROP TABLE lib_diario");
+
+
 
         IMPORT_TABLES("localhost", "root", "",$dbname, $dest_path);
 
@@ -133,12 +140,12 @@ if(isset($_POST['restore2'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script type="text/javascript" src="animate.js"></script>
     <link rel="stylesheet" href="<?php echo $_SESSION['company.style'];?>">
-    <title>Copias de Seguridad - SiGeUsu v3</title>
+    <title>Copias de Seguridad - SiGeCo v1.0</title>
 </head>
 <body>
 
     <div class="header">
-        <img src="/sigeusu v3/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
+        <img src="/sigeco/logos/<?php echo $_SESSION['company.logo'];?>" class="header-logo">
         <p class="header-text">Empresa: <?php echo $_SESSION['company.name'];?></p>
         <ul class="MainMenu"> 
             <a href="login.php" style="transform:translateY(70px);"><li class="menu-button" >VOLVER</li></a>
